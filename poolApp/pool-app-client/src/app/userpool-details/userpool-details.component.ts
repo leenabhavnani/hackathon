@@ -31,6 +31,6 @@ export class UserpoolDetailsComponent implements OnInit {
   }
 
   list(){
-    this.router.navigate(['employees']);
+    this.router.navigate(['getAllUserPools']);
   }
 }

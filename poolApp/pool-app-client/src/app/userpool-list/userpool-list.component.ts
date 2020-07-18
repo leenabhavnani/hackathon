@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./userpool-list.component.css']
 })
 export class UserpoolListComponent implements OnInit {
-  userpoolData: Observable<Userpool[]>;
+  userpoolData: Userpool[];
 
   constructor(private userPoolService: UserPoolService,
               private router: Router) {}
@@ -22,7 +22,14 @@ export class UserpoolListComponent implements OnInit {
   }
 
   reloadData() {
-    this.userpoolData = this.userPoolService.getUserpoolList();
+
+         var userpoolData : Userpool[] = [];
+         userpoolData.push({id:1, poolName:"pool test",amount:30000, tenorInMonths:6,active:true});
+    return userpoolData;
+    //  { "id": 0, "poolName": "Available" },
+      //{ "id": 1, "poolName": "Ready" },
+      //{ "id": 2, "poolName": "Started" }
+    //this.userPoolService.getUserpoolList();
   }
 
 
