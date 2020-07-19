@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+      <div class="col border"><h6 class="text-primary">My Expenses</h6>
+        <canvas baseChart 
+        [datasets]="barChartData" 
+        [labels]="barChartLabels" 
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins" 
+        [legend]="barChartLegend" 
+        [chartType]="barChartType">
+    </canvas>
+
+      </div>
+      <div class="col border">
+          <h6 class="text-primary">Messages</h6>
+          <div class="row">
+            <div class="card-deck">
+        <div class="card bg-light" style="width: 10rem; margin-left:55px">
+            <div class="card-body">
+              <h6 class="card-title">Get 10% discount on Zomato food orders	</h6>
+              <p class="card-text" style="font-size:10px">	with the DigiSmart credit card</p>
+              <a href="#" class="btn btn-primary" style="font-size:10px">Click Me!</a>
+            </div>
+            
+          </div>
+          <div class="card bg-light" style="width: 10rem;">
+            <div class="card-body">
+              <h6 class="card-title">Save monthly with Recurring Deposits.</h6>
+              <p class="card-text" style="font-size:10px">	Take small steps towards your goals every month.</p>
+              <a href="#" class="btn btn-primary" style="font-size:10px">Click Me!</a>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+      <div class="w-100"></div>
+      <div class="col border">My Payments</div>
+      <div class="col border">Column</div>
+    </div>
+  </div>
