@@ -5,7 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserpoolListComponent } from './userpool-list/userpool-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OpenpoolsComponent } from './openpools/openpools.component';
-
+import { IncomeComponent } from './income/income.component';
+import { FAQComponent } from './faq/faq.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'add', component: CreateUserpoolComponent },
   { path: 'details/:id', component: UserpoolDetailsComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'openpools', component: OpenpoolsComponent }
+  { path: 'openpools', component: OpenpoolsComponent },
+  { path:'income', component: IncomeComponent},
+  { path:'faq', component: FAQComponent}
 ];
 
 @NgModule({

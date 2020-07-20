@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OpenpoolsComponent } from './openpools/openpools.component';
 import { AccountComponent } from './account/account.component';
 import { IncomeComponent } from './income/income.component';
+import { FAQComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { IncomeComponent } from './income/income.component';
     DashboardComponent,
     OpenpoolsComponent,
     AccountComponent,
-    IncomeComponent
+    IncomeComponent,
+    FAQComponent
   ],
   imports: [
     BrowserModule,
