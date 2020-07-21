@@ -15,8 +15,12 @@ data:any;
   ngOnInit(): void {
   }
   action(){
-     let body ={"mail_subject":this.subject, "mail_body":this.suggestion};
-     this.http.post("http://localhost:8080/sendEmail",body).subscribe((data) => this.data = data);
+	   var config = {headers: {
+                'accept': 'application/json'    
+            }
+        };
+    let body = { "mail_to_address":"teaminsight.apithon@gmail.com","mail_cc_address":"teaminsight.apithon@gmail.com","mail_bcc_address":"teaminsight.apithon@gmail.com","mail_subject":this.subject,"mail_body": this.suggestion};
+     this.http.post("http://localhost:8010/sendmail",body,config).subscribe((data) => this.data = data);
   }
 
 }
