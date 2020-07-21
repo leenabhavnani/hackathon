@@ -8,6 +8,7 @@ import { OpenpoolsComponent } from './openpools/openpools.component';
 import { IncomeComponent } from './income/income.component';
 import { FAQComponent } from './faq/faq.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { HelpandSuggestionComponent } from './helpand-suggestion/helpand-suggestion.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'openpools', component: OpenpoolsComponent },
   { path: 'income', component: IncomeComponent },
   { path: 'faq', component: FAQComponent },
-  { path: 'account', component: UserAccountComponent }
+  { path: 'account', component: UserAccountComponent },
+  { path:'help', component: HelpandSuggestionComponent}
 ];
 
 @NgModule({

@@ -14,6 +14,7 @@ import { OpenpoolsComponent } from './openpools/openpools.component';
 import { AccountComponent } from './account/account.component';
 import { IncomeComponent } from './income/income.component';
 import { FAQComponent } from './faq/faq.component';
+import { HelpandSuggestionComponent } from './helpand-suggestion/helpand-suggestion.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FAQComponent } from './faq/faq.component';
     OpenpoolsComponent,
     AccountComponent,
     IncomeComponent,
-    FAQComponent
+    FAQComponent,
+    HelpandSuggestionComponent
   ],
   imports: [
     BrowserModule,
