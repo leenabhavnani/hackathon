@@ -54,12 +54,12 @@ This service is being created for the purpose of sending out emails.
 In order to run this use the earlier downloaded repository, which was downloaded from 'RbsInsight/mailService'.
 
 Below execution steps to be followed to run this application
-1. Now open command prompt and navigate to path "<project_home>\mailService-master" 
+1. Now open fresh command prompt and navigate to path "<project_home>\mailService-master" 
    For e.g., If you extracted project at D: drive the navigate to "D:\\mailService-master", here under this path you should be able to see a pom.xml file.
    
 2.There is one 'image.jpeg' file under "<project_home>\mailService-master\src\main\resources" folder. Copy and paste it in c drive.
 
 3. Now run "mvn clean install" in same command prompt to build the project
 
-4. Now run "java -jar web\target\web-1.0-SNAPSHOT.jar" to run the application
+4. Now run "java -jar target\mailService-0.0.1-SNAPSHOT.jar" to run the application
 Please note : same steps can be done using your preffered Spring Boot IDE
