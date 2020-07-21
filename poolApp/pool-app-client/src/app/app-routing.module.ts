@@ -7,16 +7,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OpenpoolsComponent } from './openpools/openpools.component';
 import { IncomeComponent } from './income/income.component';
 import { FAQComponent } from './faq/faq.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'redirecting', redirectTo: 'account', pathMatch: 'full' },
   { path: 'getAllUserPools', component: UserpoolListComponent },
   { path: 'add', component: CreateUserpoolComponent },
   { path: 'details/:id', component: UserpoolDetailsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'openpools', component: OpenpoolsComponent },
-  { path:'income', component: IncomeComponent},
-  { path:'faq', component: FAQComponent}
+  { path: 'income', component: IncomeComponent },
+  { path: 'faq', component: FAQComponent },
+  { path: 'account', component: UserAccountComponent }
 ];
 
 @NgModule({
