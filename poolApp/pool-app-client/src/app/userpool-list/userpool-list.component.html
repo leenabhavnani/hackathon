@@ -1,17 +1,17 @@
 
-  <style> 
-    /* Modify the background color */ 
-      
-    .tablenew{ 
+  <style>
+    /* Modify the background color */
+
+    .tablenew{
       color: blue;
       padding: 2px 2px 2px 2px;
-    } 
+    }
     .tr{
       height:10px;
     }
-    /* Modify brand and text color */ 
-     
-</style> 
+    /* Modify brand and text color */
+
+</style>
 
 <div class="panel panel-primary">
   <div class="panel-heading">
@@ -28,40 +28,22 @@
         <th>End Date</th>
         <th>Paticipants Joined</th>
         <th>Actions</th>
-        
+
       </tr>
       </thead>
       <tbody>
-        <tr style="font-size:12px;">
-          <td>Pool_2020_03_02_012</td>
-          <td>50000</td>
-          <td>6</td>
-          <td>1st March 2020</td>
-          <td>30th September 2020</td>
-          <td>User 6, User 9, User 10, User 12, User 13</td>
-          <td><button class="btn btn-danger btn-sm">Bid</button>
-            <button  class="btn btn-info btn-sm" style="margin-left: 10px">Details</button>
-          </td>
-        </tr>
-        <tr style="font-size:12px;">
-          <td>Pool_2020_03_02_012</td>
-          <td>10000</td>
-          <td>6</td>
-          <td>1st March 2020</td>
-          <td>30th September 2020</td>
-          <td>User 16, User 19, User 1, User 2, User 13</td>
-          <td><button disabled class="btn btn-danger btn-sm">Bid starts in 2 days</button>
-            <button  class="btn btn-info btn-sm" style="margin-left: 10px">Details</button>
-          </td>
-        </tr>
-      <!--<tr *ngFor="let userpool of userpoolData">
-        <td>{{userpool.poolName}}</td>
-        <td>{{userpool.amount}}</td>
-        <td>{{userpool.tenorInMonths}}</td>
-        <td><button (click)="userpoolDetails(userpool.id)" class="btn btn-danger">Delete</button>
-          <button (click)="userpoolDetails(userpool.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+      <tr *ngFor="let currentPool of currentPoolData; let o=odd; let e=even" style="font-size:12px;">
+        <td>{{currentPool.PoolName}} </td>
+        <td>{{currentPool.Amount}} </td>
+        <td>{{currentPool.tenure}} </td>
+        <td>{{currentPool.StartDate}} </td>
+        <td>{{currentPool.EndDate}} </td>
+        <td>{{currentPool.Participants}} </td>
+        <td><button class="btn btn-danger btn-sm" *ngIf="e">bid</button>
+          <button class="btn btn-danger btn-sm" disabled *ngIf="o">bid</button>
+          <button  class="btn btn-info btn-sm" style="margin-left: 10px">Details</button>
         </td>
-      </tr>-->
+      </tr>
       </tbody>
     </table>
   </div>
@@ -76,7 +58,7 @@
       <tr style="font-size:12px;">
         <th>Pool Name</th>
         <th>Amount</th>
-        <th>Tenor in Months</th>
+        <th>Tenure in Months</th>
         <th>Start Date</th>
         <th>End Date</th>
         <th>Paticipants Joined</th>
@@ -84,36 +66,20 @@
       </tr>
       </thead>
       <tbody>
-        <tr style="font-size:12px;">
-          <td>Pool_2020_08_01_04</td>
-          <td>10000</td>
-          <td>12</td>
-          <td>1st August 2020</td>
-          <td>31st July 2021</td>
-          <td>User 1, User 2, User 3, User 4, User 5, User 6</td>
-          <td><button class="btn btn-danger btn-sm" >Make Payment</button>
-            <button  class="btn btn-info btn-sm" style="margin-left: 10px">Details</button>
-          </td>
-        </tr>
-        <tr style="font-size:12px;">
-          <td>Pool_2020_03_02_012</td>
-          <td>10000</td>
-          <td>6</td>
-          <td>1st March 2020</td>
-          <td>30th September 2020</td>
-          <td>User 1, User 2, User 3, User 4, User 5</td>
-          <td><button class="btn btn-danger btn-sm"disabled >Make Payment</button>
-            <button  class="btn btn-info btn-sm" style="margin-left: 10px">Details</button>
-          </td>
-        </tr>
-      <!--<tr *ngFor="let userpool of userpoolData">
-        <td>{{userpool.poolName}}</td>
-        <td>{{userpool.amount}}</td>
-        <td>{{userpool.tenorInMonths}}</td>
-        <td><button (click)="userpoolDetails(userpool.id)" class="btn btn-danger">Delete</button>
-          <button (click)="userpoolDetails(userpool.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+      <tr *ngFor="let shortlisted of shortlistedPoolData ; let o=odd; let e=even" style="font-size:12px;">
+        <td>{{shortlisted.PoolName}} </td>
+        <td>{{shortlisted.Amount}} </td>
+        <td>{{shortlisted.tenure}} </td>
+        <td>{{shortlisted.StartDate}} </td>
+        <td>{{shortlisted.EndDate}} </td>
+        <td>{{shortlisted.Participants}} </td>
+        <td><button class="btn btn-danger btn-sm" *ngIf="o">Make Payment</button>
+          <button class="btn btn-danger btn-sm" disabled *ngIf="e">Make Payment</button>
+          <button  class="btn btn-info btn-sm" style="margin-left: 10px">Details</button>
         </td>
-      </tr>-->
+        <!--<td *ngIf="!IsActive({{currentPool.Participants}})"><button class="btn btn-danger btn-sm"disabled >{{currentPool.Actions}}</button>
+          <button  class="btn btn-info btn-sm" style="margin-left: 10px">Details</button>-->
+      </tr>
       </tbody>
     </table>
   </div>
@@ -131,51 +97,23 @@
         <th>Start Date </th>
         <th>End Date</th>
         <th>Tenor in Months</th>
-        <th>Participants</th>        
+        <th>Participants</th>
         <th>Total Amount invested</th>
         <th>Total Amount Received</th>
         <th>Profit</th>
       </tr>
       </thead>
       <tbody>
-        <tr style="font-size:12px;">
-          <td>Pool_2019_03_02_010</td>
-          <td>1st March 2019</td>
-          <td>30th September 2019</td>
-          <td>6</td>
-          <td>Sachin Tendulkar, M S Dhoni, Hardik Pandey</td>
-          <td>600000</td>
-          <td>605000</td>
-          <td>5000</td>          
-        </tr>
-        <tr style="font-size:12px;">
-          <td>Pool_2019_03_02_010</td>
-          <td>1st March 2019</td>
-          <td>30th September 2019</td>
-          <td>6</td>
-          <td>Sachin Tendulkar, M S Dhoni, Hardik Pandey</td>
-          <td>600000</td>
-          <td>605000</td>
-          <td>5000</td>          
-        </tr>
-        <tr style="font-size:12px;">
-          <td>Pool_2019_03_02_010</td>
-          <td>1st March 2019</td>
-          <td>30th September 2019</td>
-          <td>6</td>
-          <td>Sachin Tendulkar, M S Dhoni, Hardik Pandey</td>
-          <td>600000</td>
-          <td>605000</td>
-          <td>5000</td>          
-        </tr>
-      <!--<tr *ngFor="let userpool of userpoolData">
-        <td>{{userpool.poolName}}</td>
-        <td>{{userpool.amount}}</td>
-        <td>{{userpool.tenorInMonths}}</td>
-        <td><button (click)="userpoolDetails(userpool.id)" class="btn btn-danger">Delete</button>
-          <button (click)="userpoolDetails(userpool.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
-        </td>
-      </tr>-->
+      <tr *ngFor="let completed of completedPoolData" style="font-size:12px;">
+        <td>{{completed.PoolName}} </td>
+        <td>{{completed.StartDate}} </td>
+        <td>{{completed.EndDate}} </td>
+        <td>{{completed.tenure}} </td>
+        <td>{{completed.Participants}} </td>
+        <td>{{completed.AmountInvested}} </td>
+        <td>{{completed.AmountReceived}} </td>
+        <td>{{completed.Profit}}</td>
+      </tr>
       </tbody>
     </table>
   </div>
