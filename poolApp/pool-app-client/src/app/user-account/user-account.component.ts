@@ -19,7 +19,7 @@ export class UserAccountComponent implements OnInit {
   constructor(private userAccountService: UserAccountService) { }
 
   ngOnInit(): void {
-    console.log(window.location.href);
+   
     let codeHalf = window.location.href.split('#code=')[1];//.slice(0, string.indexOf("&"));
     
 
@@ -68,10 +68,10 @@ export class UserAccountComponent implements OnInit {
 
   getAccount()
   {
-    console.log("getAccount "+ this.consent);
+   
 
     this.userAccountService.getAccount(this.token).subscribe((response) => {
-      console.log("getAccount" + response.Data.Account);
+      
       this.allAccounts = response.Data.Account;
       // console.log("getAuthorization 2"+ response.access_token);
       // window.location.href = '' + response;

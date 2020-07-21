@@ -18,8 +18,7 @@ export class UserAccountService {
   }
 
   getToken(code: string) {
-    console.log(code);
-    // Http Headers
+   
 
     let httpOptions = {
       headers: new HttpHeaders({
@@ -34,8 +33,7 @@ export class UserAccountService {
   }
 
   getConsent(token: string) {
-    console.log('getConsent' + token);
-    // Http Headers
+   
 
     let httpOptions = {
       headers: new HttpHeaders({
@@ -58,8 +56,7 @@ export class UserAccountService {
   }
 
   getAuthorization(consentId: string) {
-    console.log('service c ' + consentId);
-    // Http Headers
+    
 
     let httpOptions = {
       headers: new HttpHeaders({
@@ -72,8 +69,7 @@ export class UserAccountService {
   }
 
   getAccount(token: string) {
-    console.log('getAaccount c ');
-    // Http Headers
+   
 
     let httpOptions = {
       headers: new HttpHeaders({
