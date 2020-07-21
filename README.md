@@ -1,6 +1,6 @@
 RBS API HAckathon 2020
 
-openbanking-java-sdk-master -
+# openbanking-java-sdk-master -
 This project is build on top of the sdk shared by the Open Banking team which has the code to connect to the APIs.
 We have built our controller to fetch User Pool data from backend.
 
@@ -12,10 +12,10 @@ We have built our controller to fetch User Pool data from backend.
 or
 6. You can open command Prompt from the project folder and run - java -jar web\target\web-1.0-SNAPSHOT.jar
 
-poolApp -
+# poolApp -
 This project is a dummy Spring boot project which the UI code written in Angular 9 and Java code with MongoDB.
 
-pool-app-client -
+# pool-app-client -
 This is the UI code which is mentioned before. To run this code you should have node installed
 This project was generated with Angular CLI version 9.0.0-rc.7.
 
