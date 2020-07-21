@@ -15,6 +15,7 @@ import { AccountComponent } from './account/account.component';
 import { IncomeComponent } from './income/income.component';
 import { FAQComponent } from './faq/faq.component';
 import { HelpandSuggestionComponent } from './helpand-suggestion/helpand-suggestion.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HelpandSuggestionComponent } from './helpand-suggestion/helpand-suggest
     AccountComponent,
     IncomeComponent,
     FAQComponent,
-    HelpandSuggestionComponent
+    HelpandSuggestionComponent,
+    UserAccountComponent
   ],
   imports: [
     BrowserModule,

@@ -21,12 +21,11 @@ export class UserAccountComponent implements OnInit {
   ngOnInit(): void {
     console.log(window.location.href);
     let codeHalf = window.location.href.split('#code=')[1];//.slice(0, string.indexOf("&"));
-    console.log(codeHalf);
+    
 
     if (codeHalf != undefined) {
       let code = codeHalf.split('&i')[0];
-      console.log(code);
-     
+      
       this.getToken(code);
     }
 
@@ -34,18 +33,15 @@ export class UserAccountComponent implements OnInit {
 
   getUserAccountList() {
     this.userAccountService.getUserAccountList().subscribe((response) => {
-      console.log("res" + response);
-      // console.log("res 2"+ response);
+   
       window.location.href = '' + response;
     })
   }
 
   getToken(code: string) {
     this.userAccountService.getToken(code).subscribe((response) => {
-      console.log("res" + response);
-       console.log("res 2 "+ response.access_token);
+      
       this.token = response.access_token;
-      console.log("this.token " + this.token);
       this.getAispConsent(this.token);
     })
      
@@ -53,9 +49,9 @@ export class UserAccountComponent implements OnInit {
 
   getAispConsent(token : string)
   {
-    console.log("rgetAispConsent "+ this.token);
+    
     this.userAccountService.getConsent(this.token).subscribe((response) => {
-      console.log("getAispConsent" + response.Data.ConsentId);
+   
        this.consent = response.Data.ConsentId
      
        this.getAuthorization( );
